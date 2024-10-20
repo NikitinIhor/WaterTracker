@@ -1,0 +1,70 @@
+.title {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.signin {
+  color: var(--blue-color);
+  border: none;
+  transition: all 0.4s ease;
+}
+.signin:hover {
+  color: #ff9d43;
+}
+.wrapper {
+  background-image: url("../../images/background-mobile/signin-dots.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.inner_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 66px;
+}
+.bottle {
+  background-image: url("../../images/background-mobile/Bottle Sign In.png");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 280px;
+  height: 210px;
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .inner_wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+  .content {
+    position: relative;
+    z-index: 100;
+  }
+  .wrapper {
+    background-image: none;
+  }
+  .bottle {
+    background-image: url("../../images/background-laptop/Bottle for Sign in.png");
+    background-position: right 20px bottom -18px;
+    width: 736px;
+    height: 548px;
+    position: absolute;
+  }
+}
+@media (min-width: 1440px) {
+  .wrapper {
+    padding-bottom: 109px;
+  }
+  .content {
+    margin-left: auto;
+    padding: 113px 198px 157px 0;
+  }
+  .bottle {
+    background-image: url("../../images/background-desktop/Bottle for Sign in.png"),
+      url("../../images/background-desktop/dots.png");
+    width: 916px;
+    height: 680px;
+    right: 40%;
+  }
+}

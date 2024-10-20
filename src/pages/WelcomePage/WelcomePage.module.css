@@ -1,0 +1,41 @@
+.main {
+  max-width: 320px;
+  margin: 0 auto;
+  background-image: url("../../images/background-mobile/back.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 40px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (min-width: 768px) {
+  .main {
+    max-width: 768px;
+    background-image: url("../../images/background-laptop/back.jpg");
+    padding-bottom: 50px;
+  }
+  .wrapper {
+    gap: 60px;
+  }
+}
+@media (min-width: 1440px) {
+  .main {
+    max-width: 1440px;
+    background-image: url("../../images/background-desktop/dots.png");
+    background-position: bottom 50px;
+  }
+  .big_wrapper {
+    padding: 0 18px 60px 18px;
+    background-image: url("../../images/background-desktop//back.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+  .wrapper {
+    flex-direction: row;
+    padding: 30px 104px 185px 104px;
+  }
+}

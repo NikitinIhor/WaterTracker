@@ -1,0 +1,29 @@
+.container {
+  padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.signin {
+  display: flex;
+  gap: 8px;
+  color: var(--blue-color);
+}
+span {
+  transition: all 0.4s ease;
+}
+.signin span:hover {
+  color: #ff9d43;
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 1440px) {
+  .container {
+    margin-bottom: 49px;
+  }
+}
