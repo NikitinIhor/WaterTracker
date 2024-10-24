@@ -1,7 +1,8 @@
-// import css from './App.module.css'
 import { lazy, Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/Header/Header";
+import Loader from "./components/Loader/Loader";
+import WelcomeHeader from "./components/WelcomeHeader/WelcomeHeader";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
@@ -10,9 +11,12 @@ const SignupPage = lazy(() => import("./pages/SignupPage/SignupPage"));
 const WelcomePage = lazy(() => import("./pages/WelcomePage/WelcomePage"));
 
 export default function App() {
+  const location = useLocation();
+  const isWelcomePage = location.pathname === "/welcome";
   return (
-    <Suspense fallback={null}>
-      <Header />
+    <Suspense fallback={<Loader />}>
+      {isWelcomePage ? <WelcomeHeader /> : <Header />}
+
       <Routes>
         <Route path="/" element={<WelcomePage />} />
         <Route path="/signin" element={<SigninPage />} />

@@ -1,11 +1,10 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId, useState } from "react";
+import { Link } from "react-router-dom";
 import * as Yup from "yup";
-import css from "../SigninForm/SigninForm.module.css";
-
-import eye from "../../../images/icons/eye.svg";
-import no_eye from "../../../images/icons/no-eye.svg";
+import sprites from "../../../images/sprite.svg";
 import Button from "../../Button/Button";
+import css from "../SigninForm/SigninForm.module.css";
 
 const initialValues = {
   email: "",
@@ -25,15 +24,16 @@ const FormSchema = Yup.object().shape({
 });
 
 export default function SignupForm() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [showRepeatPassword, setShowRepeatPassword] = useState(false);
+  const [showSignupPassword, setShowSignupPassword] = useState(false);
+  const [showRepeatSignupPassword, setShowRepeatSignupPassword] =
+    useState(false);
 
-  const handleShowPassword = () => {
-    setShowPassword((prev) => !prev);
+  const handleShowSignupPassword2 = () => {
+    setShowSignupPassword((prev) => !prev);
   };
 
-  const handleShowRepeatPassword = () => {
-    setShowRepeatPassword((prev) => !prev);
+  const handleShowSignupRepeatPassword = () => {
+    setShowRepeatSignupPassword((prev) => !prev);
   };
 
   const id = useId();
@@ -68,15 +68,15 @@ export default function SignupForm() {
               name="password"
               placeholder="Password"
               id={`password-${id}`}
-              type={showPassword ? "text" : "password"}
+              type={showSignupPassword ? "text" : "password"}
             />
-            <div className={css.btn} type="button" onClick={handleShowPassword}>
-              {showPassword ? (
-                <img src={eye} alt="show password" />
-              ) : (
-                <img src={no_eye} alt="hide password" />
-              )}
-            </div>
+            <svg onClick={handleShowSignupPassword2} className={css.eye_icon}>
+              <use
+                href={`${sprites}#icon-${
+                  showSignupPassword ? "eye" : "no-eye"
+                }`}
+              ></use>
+            </svg>
           </div>
           <ErrorMessage
             className={css.error}
@@ -93,19 +93,18 @@ export default function SignupForm() {
               name="repeat_password"
               placeholder="Repeat password"
               id={`repeat_password-${id}`}
-              type={showRepeatPassword ? "text" : "password"}
+              type={showRepeatSignupPassword ? "text" : "password"}
             />
-            <div
-              className={css.btn}
-              type="button"
-              onClick={handleShowRepeatPassword}
+            <svg
+              onClick={handleShowSignupRepeatPassword}
+              className={css.eye_icon}
             >
-              {showRepeatPassword ? (
-                <img src={eye} alt="show password" />
-              ) : (
-                <img src={no_eye} alt="hide password" />
-              )}
-            </div>
+              <use
+                href={`${sprites}#icon-${
+                  showRepeatSignupPassword ? "eye" : "no-eye"
+                }`}
+              ></use>
+            </svg>
           </div>
           <ErrorMessage
             className={css.error}
@@ -113,7 +112,9 @@ export default function SignupForm() {
             component="span"
           />
         </div>
-        <Button type="submit">Sign Up</Button>
+        <Button>
+          <Link to="/welcome">Sign In</Link>
+        </Button>
       </Form>
     </Formik>
   );

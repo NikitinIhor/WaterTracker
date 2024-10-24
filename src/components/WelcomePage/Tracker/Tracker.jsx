@@ -1,6 +1,7 @@
-import date from "../../../images/icons/date.svg";
-import pot from "../../../images/icons/pot.svg";
-import settings from "../../../images/icons/settings.svg";
+import { Link } from "react-router-dom";
+import date from "../../../images/icons/date.png";
+import pot from "../../../images/icons/pot.png";
+import settings from "../../../images/icons/settings.png";
 import Button from "../../Button/Button";
 import css from "./Tracker.module.css";
 
@@ -26,7 +27,9 @@ export default function Tracker() {
           </li>
         </ul>
       </div>
-      <Button typr="button">Try tracker</Button>
+      <Button type="button">
+        <Link to="/signin">Try tracker</Link>
+      </Button>
     </div>
   );
 }

@@ -1,11 +1,10 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId, useState } from "react";
+import { Link } from "react-router-dom";
 import * as Yup from "yup";
-import css from "./SigninForm.module.css";
-
-import eye from "../../../images/icons/eye.svg";
-import no_eye from "../../../images/icons/no-eye.svg";
+import sprites from "../../../images/sprite.svg";
 import Button from "../../Button/Button";
+import css from "./SigninForm.module.css";
 
 const initialValues = {
   email: "",
@@ -21,9 +20,9 @@ const FormSchema = Yup.object().shape({
 });
 
 export default function SigninForm() {
-  const [showPassword, setShowPassword] = useState(false);
-  const handleShowPassword = () => {
-    setShowPassword((prev) => !prev);
+  const [showSigninPassword, setShowSigninPassword] = useState(false);
+  const handleShowSigninPassword = () => {
+    setShowSigninPassword((prev) => !prev);
   };
 
   const id = useId();
@@ -58,15 +57,15 @@ export default function SigninForm() {
               name="password"
               placeholder="Password"
               id={`password-${id}`}
-              type={showPassword ? "text" : "password"}
+              type={showSigninPassword ? "text" : "password"}
             />
-            <div className={css.btn} type="button" onClick={handleShowPassword}>
-              {showPassword ? (
-                <img src={eye} alt="show password" />
-              ) : (
-                <img src={no_eye} alt="hide password" />
-              )}
-            </div>
+            <svg onClick={handleShowSigninPassword} className={css.eye_icon}>
+              <use
+                href={`${sprites}#icon-${
+                  showSigninPassword ? "eye" : "no-eye"
+                }`}
+              ></use>
+            </svg>
           </div>
           <ErrorMessage
             className={css.error}
@@ -74,7 +73,9 @@ export default function SigninForm() {
             component="span"
           />
         </div>
-        <Button type="submit">Sign In</Button>
+        <Button>
+          <Link to="/welcome">Sign In</Link>
+        </Button>
       </Form>
     </Formik>
   );

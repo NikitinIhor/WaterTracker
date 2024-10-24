@@ -1,0 +1,50 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.settings {
+  display: flex;
+  justify-content: space-between;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.settings button {
+  border: none;
+}
+.content p {
+  font-size: 18px;
+}
+.photo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgb(209, 209, 209);
+}
+.image {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.image button {
+  color: var(--blue-color);
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  transition: all 0.4s ease;
+}
+.image button:hover {
+  color: rgba(255, 157, 67, 1);
+}

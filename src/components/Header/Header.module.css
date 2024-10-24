@@ -16,7 +16,12 @@ span {
 .signin span:hover {
   color: #ff9d43;
 }
-
+.user_icon {
+  stroke: black;
+  fill: none;
+  width: 28px;
+  height: 28px;
+}
 @media (min-width: 768px) {
   .container {
     margin-bottom: 40px;
