@@ -1,3 +1,6 @@
+.modal {
+  max-height: 80vh;
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -11,16 +14,30 @@
 .settings {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 26px;
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 24px;
 }
-.settings button {
-  border: none;
+.exit {
+  width: 40px;
+  height: 40px;
+  fill: none;
+  stroke: blue;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  transform: rotate(45deg);
 }
-.content p {
+.exit:hover {
+  stroke: rgba(255, 157, 67, 1);
+}
+.update_avatar {
+  margin-bottom: 24px;
+}
+.update_avatar p {
   font-size: 18px;
+  margin-bottom: 8px;
 }
 .photo {
   display: flex;
@@ -38,13 +55,23 @@
   align-items: center;
   gap: 10px;
 }
-.image button {
+.image {
   color: var(--blue-color);
   font-size: 14px;
   font-weight: 500;
   border: none;
   transition: all 0.4s ease;
 }
-.image button:hover {
+.image:hover {
   color: rgba(255, 157, 67, 1);
+}
+.arrow_icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: blue;
+  transition: all 0.4s ease;
+}
+.image:hover .arrow_icon {
+  stroke: rgba(255, 157, 67, 1);
 }

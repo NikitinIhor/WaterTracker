@@ -1,5 +1,6 @@
 .userbar {
   display: flex;
+  align-items: center;
   gap: 8px;
 }
 .userName {
@@ -11,11 +12,15 @@
   border-radius: 50%;
   background-color: rgb(204, 204, 204);
 }
-.btn {
-  border: none;
+.arrow {
+  cursor: pointer;
+  stroke: blue;
+  fill: none;
+  width: 20px;
+  height: 20px;
 }
-.img {
-  fill: red;
+.arrow.rotate {
+  transform: rotate(180deg);
 }
 .list {
   padding: 16px;
@@ -27,7 +32,6 @@
   position: absolute;
   top: 50px;
   right: 20px;
-
   max-height: 0;
   opacity: 0;
   overflow: hidden;
@@ -39,11 +43,27 @@
   opacity: 1;
   visibility: visible;
 }
-.item {
-  display: flex;
-  gap: 8px;
+
+.icon {
+  stroke: var(--blue-color);
+  fill: none;
+  width: 18px;
+  height: 18px;
+  transition: all 0.4s ease;
 }
 .item button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
   border: none;
   color: var(--blue-color);
+  transition: all 0.4s ease;
+}
+
+.item button:hover {
+  color: rgba(255, 157, 67, 1);
+}
+
+.item button:hover .icon {
+  stroke: rgba(255, 157, 67, 1);
 }
