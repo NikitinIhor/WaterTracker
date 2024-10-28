@@ -67,3 +67,14 @@
 .item button:hover .icon {
   stroke: rgba(255, 157, 67, 1);
 }
+
+@media (min-width: 768px) {
+  .list {
+    right: 32px;
+  }
+}
+@media (min-width: 1440px) {
+  .list {
+    right: 95px;
+  }
+}

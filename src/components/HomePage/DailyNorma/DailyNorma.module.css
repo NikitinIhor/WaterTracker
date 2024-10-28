@@ -1,0 +1,114 @@
+.dailyNorma {
+  background-image: url("../../../images/background-mobile/Bottle home screen.png");
+  background-repeat: no-repeat;
+  background-position: center top 80px;
+}
+.norma {
+  padding: 5px 20px;
+  width: 170px;
+  border: 1px solid rgba(236, 242, 255, 1);
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 0px rgba(158, 187, 255, 0.12);
+  margin-bottom: 232px;
+}
+.norma h2 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.norma_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.value {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--blue-color);
+}
+.edit {
+  border: none;
+  color: rgba(139, 174, 255, 1);
+  transition: 0.4s all ease;
+}
+.edit:hover {
+  color: rgba(255, 157, 67, 1);
+}
+.today {
+  height: 80px;
+  margin-bottom: 18px;
+}
+.today h2 {
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--blue-color);
+  margin-bottom: 8px;
+}
+.today input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-left: 5px;
+  width: 265px;
+  height: 8px;
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 16px;
+}
+
+.today input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid black;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.rule {
+  width: 280px;
+  display: flex;
+  justify-content: space-between;
+}
+.rule span {
+  color: var(--blue-color);
+  position: relative;
+}
+.rule span::after {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 2px;
+  top: -12px;
+  left: 50%;
+  background-color: rgba(215, 227, 255, 1);
+}
+.add {
+  display: flex;
+  border: none;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  padding: 8px 0;
+  width: 100%;
+  background-color: var(--blue-color);
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+.add:hover {
+  box-shadow: 0px 4px 14px 0px #407bff8a;
+}
+.add:focus {
+  box-shadow: none;
+}
+.icon {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: white;
+}

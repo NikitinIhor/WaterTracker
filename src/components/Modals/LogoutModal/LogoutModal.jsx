@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import Modal from "react-modal";
 import sprites from "../../../images/sprite.svg";
-import UpdateForm from "../../Forms/UpdateForm/UpdateForm";
-import css from "./SettingsModal.module.css";
+import css from "./LogoutModal.module.css";
 Modal.setAppElement("#root");
 
-export default function SettingsModal({ isOpen, onRequestClose }) {
+export default function LogoutModal({ isOpen, onRequestClose }) {
   const [modalWidth, setModalWidth] = useState("280px");
 
   useEffect(() => {
@@ -14,11 +13,7 @@ export default function SettingsModal({ isOpen, onRequestClose }) {
 
       if (width < 768) {
         setModalWidth("280px");
-      } else if (width < 1440) {
-        setModalWidth("707px");
-      } else {
-        setModalWidth("1008px");
-      }
+      } else setModalWidth("592px");
     };
 
     updateModalWidth();
@@ -50,25 +45,25 @@ export default function SettingsModal({ isOpen, onRequestClose }) {
         overlayClassName={css.overlay}
       >
         <div className={css.modal}>
-          <div className={css.settings}>
-            <p>Setting</p>
+          <div className={css.logout}>
+            <p>Log out</p>
             <svg onClick={onRequestClose} className={css.exit}>
               <use href={`${sprites}#icon-plus2`}></use>
             </svg>
           </div>
-          <div className={css.update_avatar}>
-            <p>Your photo</p>
-            <div className={css.photo}>
-              <span className={css.avatar}></span>
-              <button className={css.image} type="button">
-                <svg className={css.arrow_icon}>
-                  <use href={`${sprites}#icon-arrow-up`}></use>
-                </svg>
-                Upload a photo
-              </button>
-            </div>
+          <p className={css.text}>Do you really want to leave?</p>
+          <div className={css.btns}>
+            <button className={`${css.btn} ${css.delete}`} type="button">
+              Log out
+            </button>
+            <button
+              onClick={onRequestClose}
+              className={`${css.btn} ${css.cancel}`}
+              type="button"
+            >
+              Cancel
+            </button>
           </div>
-          <UpdateForm className={css.updateForm} />
         </div>
       </Modal>
     </div>

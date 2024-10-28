@@ -1,0 +1,85 @@
+.modal {
+  max-height: 80vh;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+.logout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.exit {
+  width: 40px;
+  height: 40px;
+  fill: none;
+  stroke: blue;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  transform: rotate(45deg);
+}
+.exit:hover {
+  stroke: rgba(255, 157, 67, 1);
+}
+.text {
+  font-weight: 500;
+  font-size: 18px;
+  color: rgba(47, 47, 47, 1);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+.btns {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.btn {
+  font-weight: 500;
+  border: none;
+  width: 100%;
+  padding: 8px 0;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+.delete {
+  color: var(--white-color);
+  background: rgba(239, 80, 80, 1);
+}
+.cancel {
+  color: var(--blue-color);
+  background: rgba(215, 227, 255, 1);
+}
+.delete:hover {
+  box-shadow: 0px 4px 14px 0px rgba(239, 80, 80, 1);
+}
+.cancel:hover {
+  box-shadow: 0px 4px 14px 0px rgba(215, 227, 255, 1);
+}
+.delete:active,
+.cancel:active {
+  box-shadow: none;
+}
+@media (min-width: 768px) {
+  .btns {
+    flex-direction: row;
+    justify-content: right;
+  }
+  .btn {
+    width: 160px;
+  }
+}
+@media (min-width: 1440px) {
+  .btns {
+    justify-content: left;
+  }
+}

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../../images/icons/Logo.png";
 import sprites from "../../images/sprite.svg";
 import css from "../Header/Header.module.css";
+import LogoutModal from "../Modals/LogoutModal/LogoutModal";
 import SettingsModal from "../Modals/SettingsModal/SettingsModal";
 import css2 from "./WelcomeHeader.module.css";
 
@@ -13,15 +14,20 @@ export default function WelcomeHeader() {
     setOpen((prev) => !prev);
   };
 
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [settingsModalIsOpen, setSettingsModalIsOpen] = useState(false);
+  const [logoutModalIsOpen, setLogoutModalIsOpen] = useState(false);
 
-  const openModal = () => {
-    setIsOpen(true);
+  const openSettingsModal = () => {
+    setSettingsModalIsOpen(true);
+    setOpen(false);
   };
+  const closeSettingsModal = () => setSettingsModalIsOpen(false);
 
-  const closeModal = () => {
-    setIsOpen(false);
+  const openLogoutModal = () => {
+    setLogoutModalIsOpen(true);
+    setOpen(false);
   };
+  const closeLogoutModal = () => setLogoutModalIsOpen(false);
 
   return (
     <header className="container">
@@ -41,7 +47,7 @@ export default function WelcomeHeader() {
             </svg>
             <ul className={`${css2.list} ${open ? css2.open : ""}`}>
               <li className={css2.item}>
-                <button onClick={openModal} type="button">
+                <button onClick={openSettingsModal} type="button">
                   <svg className={css2.icon}>
                     <use href={`${sprites}#icon-settings`}></use>
                   </svg>
@@ -49,7 +55,7 @@ export default function WelcomeHeader() {
                 </button>
               </li>
               <li className={css2.item}>
-                <button type="button">
+                <button onClick={openLogoutModal} type="button">
                   <svg className={css2.icon}>
                     <use href={`${sprites}#icon-exit`}></use>
                   </svg>
@@ -60,7 +66,14 @@ export default function WelcomeHeader() {
           </div>
         </div>
       </div>
-      <SettingsModal isOpen={modalIsOpen} onRequestClose={closeModal} />
+      <LogoutModal
+        isOpen={logoutModalIsOpen}
+        onRequestClose={closeLogoutModal}
+      />
+      <SettingsModal
+        isOpen={settingsModalIsOpen}
+        onRequestClose={closeSettingsModal}
+      />
     </header>
   );
 }
