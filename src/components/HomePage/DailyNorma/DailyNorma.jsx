@@ -1,6 +1,6 @@
 import { useState } from "react";
 import sprites from "../../../images/sprite.svg";
-import AddWatermodal from "../../Modals/AddWatermodal/AddWatermodal";
+import AddWatermodal from "../../Modals/AddWaterModal/AddWaterModal";
 import DailyNormaModal from "../../Modals/DailyNormaModal/DailyNormaModal";
 import css from "./DailyNorma.module.css";
 
