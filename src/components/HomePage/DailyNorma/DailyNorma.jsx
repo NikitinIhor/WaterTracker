@@ -1,6 +1,6 @@
 import { useState } from "react";
 import sprites from "../../../images/sprite.svg";
-import AddWatermodal from "../../Modals/AddWaterModal/AddWaterModal";
+import AddWaterModal from "../../Modals/AddWaterModal/AddWaterModal";
 import DailyNormaModal from "../../Modals/DailyNormaModal/DailyNormaModal";
 import css from "./DailyNorma.module.css";
 
@@ -77,7 +77,7 @@ export default function DailyNorma() {
         isOpen={openEditModal}
         onRequestClose={handleCloseEditModal}
       />
-      <AddWatermodal
+      <AddWaterModal
         isOpen={openAddModal}
         onRequestClose={handleCloseAddModal}
       />

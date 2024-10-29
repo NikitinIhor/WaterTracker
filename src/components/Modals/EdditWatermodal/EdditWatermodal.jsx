@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import Modal from "react-modal";
 import water from "../../../images/icons/gluss.png";
 import sprites from "../../../images/sprite.svg";
-import css from "./EdditWatermodal.module.css";
+import css from "./EdditWaterModal.module.css";
 Modal.setAppElement("#root");
 
-export default function EdditWatermodal({ isOpen, onRequestClose }) {
+export default function EdditWaterModal({ isOpen, onRequestClose }) {
   const [modalWidth, setModalWidth] = useState("280px");
 
   useEffect(() => {
