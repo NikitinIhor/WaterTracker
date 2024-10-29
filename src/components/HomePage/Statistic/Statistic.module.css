@@ -1,0 +1,57 @@
+.wrapper {
+  padding: 24px 8px;
+  background-color: rgba(236, 242, 255, 1);
+  border-radius: 10px;
+  box-shadow: 0px 4px 14px 0px rgba(64, 123, 255, 0.3);
+}
+.today h2 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.water {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 12px;
+}
+.water span {
+  font-size: 18px;
+  color: var(--blue-color);
+}
+.water_icon {
+  width: 16px;
+  height: 16px;
+}
+.time {
+  font-size: 12px;
+  line-height: 2;
+  margin-right: 38px;
+}
+.btns {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.edit,
+.delete {
+  width: 18px;
+  height: 18px;
+  stroke: blue;
+  fill: none;
+  cursor: pointer;
+}
+.delete {
+  stroke: red;
+}
