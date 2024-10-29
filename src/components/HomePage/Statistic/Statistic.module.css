@@ -4,6 +4,9 @@
   border-radius: 10px;
   box-shadow: 0px 4px 14px 0px rgba(64, 123, 255, 0.3);
 }
+.today {
+  margin-bottom: 24px;
+}
 .today h2 {
   font-weight: 500;
   font-size: 24px;
@@ -14,11 +17,22 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  margin-bottom: 36px;
 }
 .item {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+}
+.item::before {
+  position: absolute;
+  content: "";
+  bottom: -50%;
+  left: 0;
+  background-color: rgba(215, 227, 255, 1);
+  width: 100%;
+  height: 2px;
 }
 .water {
   display: flex;
@@ -45,7 +59,8 @@
   align-items: center;
 }
 .edit,
-.delete {
+.delete,
+.icon_add {
   width: 18px;
   height: 18px;
   stroke: blue;
@@ -54,4 +69,17 @@
 }
 .delete {
   stroke: red;
+}
+.button_add {
+  display: flex;
+  gap: 8px;
+}
+.button_add button {
+  border: none;
+  font-weight: 500;
+  color: var(--blue-color);
+}
+.icon_add {
+  width: 24px;
+  height: 24px;
 }

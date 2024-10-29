@@ -69,6 +69,12 @@ export default function Statistic() {
             </div>
           </li>
         </ul>
+        <div className={css.button_add}>
+          <svg className={css.icon_add}>
+            <use href={`${sprites}#icon-plus2`}></use>
+          </svg>
+          <button type="button">Add water</button>
+        </div>
       </div>
       <div className={css.month}></div>
     </div>
